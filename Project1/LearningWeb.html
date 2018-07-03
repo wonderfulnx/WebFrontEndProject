@@ -10,8 +10,9 @@
 </head>
 
 <body>
-    <div class="navigater">
+    <div class="navigater" id="navigater">
         <div class="navigater-home">
+            <img src="resource/书本.png" style="display: inline-block; height: 18px; vertical-align: middle"/>
             <span class="navi-title">学生学习室</span>
         </div>
         <div style="width: inherit; height: 20px; background-color: rgb(245, 246, 247);"></div>
@@ -43,7 +44,10 @@
         </nav>
     </div>
     <div class="banner">
-        <h1>华清大学落网学堂</h1>
+        <div class="navigater-oper" onclick="Animation(this)">
+            <img src="resource/列表.png" style="display: inline-block; height: 30px; vertical-align: middle"/>
+        </div>
+        <h1 style="color: #595959; ">华清大学落网学堂</h1>
     </div>
     <div class="info-section" id="info_section">
         <div class="page-content" id="announces">
@@ -224,5 +228,4 @@
     </div>
     <script src="main.js"></script>
 </body>
-
 </html>

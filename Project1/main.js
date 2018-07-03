@@ -77,8 +77,47 @@ function return_anno() {
     show_refresh("announces")
 }
 
-function status(){
-    this.current = null
+//侧边栏收起显示动画
+function Animation(e){
+    let sideBar = document.getElementById('navigater')
+    let info = document.getElementById('info_section')
+    hide = function(){
+        sideBar.style.left = '0px'
+        info.style.left = '300px'
+        e.style.left = '304px'
+        sideBar.classList.remove('move_right')
+        info.classList.remove('move_right')
+        e.classList.remove('move_right')
+        sideBar.classList.add('move_left')
+        info.classList.add('move_left')
+        e.classList.add('move_left')
+    }
+    show = function(){
+        sideBar.style.left = '-300px'
+        info.style.left = '0px'
+        e.style.left = '4px'
+        sideBar.classList.remove('move_left')
+        info.classList.remove('move_left')
+        e.classList.remove('move_left')
+        sideBar.classList.add('move_right')
+        info.classList.add('move_right')
+        e.classList.add('move_right')
+    }
+
+    if (e.has_hide){
+        if (e.has_hide === 'true'){
+            show()
+            e.has_hide = 'false'
+        }
+        else {
+            hide()
+            e.has_hide = 'true'
+        }
+    }
+    else {
+        hide()
+        e.has_hide = 'true'
+    }
 }
 
 function sort_by_num(e) {

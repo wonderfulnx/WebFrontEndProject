@@ -9,30 +9,24 @@ body{
 
 .banner{
     display: block;
-    /* position: relative; */
     margin: 0 auto;
     width: 100%;
     height: 120px;
-    /* left: 300px; */
-    background-color:#B2DFEE;
+    /* background-color:#B4EEB4; */
+    background-image: url('resource/back.png');
     text-align: center;
 }
 
 .navigater{
     display: block;
-    /* display: inline; */
     width: 300px;
     position: absolute;
-    /* height: 700px; */
     height: 100%;
     overflow-y: auto;
     left: 0;    
     box-shadow: 1px 0 10px rgba(150,150,150,.3);
     position: absolute;
-    /* float: left; */
-    /* background-color: antiquewhite; */
     background: white;
-    /* padding: 5px; */
 }
 
 .navigater-home{
@@ -40,8 +34,48 @@ body{
     background: white;
     color: #6E6E6E;
     margin: 20px;
-    /* border-bottom: 20px; */
-    /* border-color: grey; */
+}
+
+.navi-title{
+    display: inline;
+    font-size: 16px;
+    font-weight: bold;
+    vertical-align: middle;
+}
+
+.navigater-oper{
+    left: 304px;
+    position: absolute;
+    width: 30px;
+    height: 34px;
+    padding: 2px 4px;
+}
+
+/* 定义动画 */
+@keyframes move_right {
+	to {
+        transform: translateX(300px);
+	}
+}
+
+@keyframes move_left {
+	to {
+		transform: translateX(-300px);
+	}
+}
+
+/* 绑定动画 */
+.move_right {
+    animation-name: move_right;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+.move_left {
+    animation-name: move_left;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 }
 
 .info-section{
@@ -54,39 +88,18 @@ body{
     padding: 30px 15px;
 }
 
-.navi-title{
-    /* height: 20px;
-    line-height: 20px;
-    background-color: aliceblue;
-    color: darkturquoise; */
-    font-size: 16px;
-    font-weight: bold;
-    vertical-align: middle;
-}
 
 .navi-choice{
-    /* display: list-item; */
     display: block;
-    /* vertical-align: middle; */
-    /* width: inherit; */
-    /* height: 61px; */
-    /* border-bottom: 2px; */
     padding: 15px;
     color: #787878;
     
-    /* box-sizing: border-box; */
     border-bottom: 1px solid #e7e7eb;
     font-size: 14px;
 }
 
 .navi-choice:hover{
-    /* display: block;
-    padding: 15px; */
     background: rgb(245, 246, 247);
-
-    /* color: #787878;
-    
-    border-bottom: 1px solid #e7e7eb; */
 }
 
 .navi-choice-sec{
@@ -100,22 +113,8 @@ body{
 
 
 .navi-choice-sec:hover{
-    /* display: block;
-    padding: 15px; */
     background: rgb(250, 250, 250);
-    /* color: #787878;
-    border-bottom: 1px solid #e7e7eb; */
 }
-
-/* .navi-choice-chosen{
-    color: #9AFF9A;
-} */
-
-/*.navi-choice:active{
-    display: block;
-    padding: 15px;
-    border-bottom: 1px solid #e7e7eb;
-} */
 
 .summary{
     display: block;
