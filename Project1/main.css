@@ -120,3 +120,59 @@ body{
 .summary{
     display: block;
 }
+
+table{
+    margin-top: 1em;
+    margin-bottom: 3em;
+    
+    width: 100%;
+}
+
+table thead{
+    text-align: start;
+}
+
+table thead tr{
+    height: 36px;
+    padding: 8px;
+    font-size: 14px;
+    font-weight: normal;
+    background: rgb(246, 247, 248);
+    color: #BABABA;
+}
+
+table tbody tr{
+    border-bottom: 1px solid rgb(231, 231, 235);
+    color: #4A4A4A;
+    height: 36px;
+    padding: 8px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.page-content{
+    display: none;
+    overflow-y: auto;
+}
+
+.para{
+    height: 300px;
+    width: 75%;
+    padding: 30px 15px;
+    background: #F7F7F7;
+    border-top: 2px solid rgb(231, 231, 235);
+    border-bottom: 2px solid rgb(231, 231, 235);
+    font-size: 14px;
+    color: #6E6E6E;
+}
+
+.return_btn{
+    display: block;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    font-size: 16px;
+}
