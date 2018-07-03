@@ -3,21 +3,30 @@
     padding: 0;
 }
 
+body{
+    font-family: "Helvetica Neue","Hiragino Sans GB","Microsoft YaHei","\9ED1\4F53",Arial,sans-serif;
+}
+
 .banner{
     display: block;
+    /* position: relative; */
+    margin: 0 auto;
     width: 100%;
     height: 120px;
-    left: 300px;
-    background-color: green;
+    /* left: 300px; */
+    background-color:#B2DFEE;
     text-align: center;
 }
 
 .navigater{
     display: block;
+    /* display: inline; */
     width: 300px;
+    position: absolute;
     /* height: 700px; */
     height: 100%;
-    left: 0;
+    overflow-y: auto;
+    left: 0;    
     box-shadow: 1px 0 10px rgba(150,150,150,.3);
     position: absolute;
     /* float: left; */
@@ -29,13 +38,20 @@
 .navigater-home{
     display: block;
     background: white;
+    color: #6E6E6E;
     margin: 20px;
     /* border-bottom: 20px; */
     /* border-color: grey; */
 }
 
 .info-section{
-
+    display: block;
+    width: 75%;
+    height: 100%;
+    overflow-y: auto;
+    left: 300px;
+    position: relative;
+    padding: 30px 15px;
 }
 
 .navi-title{
@@ -55,11 +71,52 @@
     /* width: inherit; */
     /* height: 61px; */
     /* border-bottom: 2px; */
-    padding: 20px;
+    padding: 15px;
+    color: #787878;
+    
     /* box-sizing: border-box; */
     border-bottom: 1px solid #e7e7eb;
+    font-size: 14px;
 }
 
-.navigation{
+.navi-choice:hover{
+    /* display: block;
+    padding: 15px; */
+    background: rgb(245, 246, 247);
+
+    /* color: #787878;
+    
+    border-bottom: 1px solid #e7e7eb; */
+}
+
+.navi-choice-sec{
+    display: block;
+    padding: 15px;
+    background: rgb(245, 246, 247);
+    color: #787878;
+    border-bottom: 1px solid #e7e7eb;
+    font-size: 13px; 
+}
+
+
+.navi-choice-sec:hover{
+    /* display: block;
+    padding: 15px; */
+    background: rgb(250, 250, 250);
+    /* color: #787878;
+    border-bottom: 1px solid #e7e7eb; */
+}
+
+/* .navi-choice-chosen{
+    color: #9AFF9A;
+} */
+
+/*.navi-choice:active{
+    display: block;
+    padding: 15px;
+    border-bottom: 1px solid #e7e7eb;
+} */
+
+.summary{
     display: block;
 }
