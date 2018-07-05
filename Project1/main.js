@@ -14,7 +14,7 @@
             else console.log('error')
             color_refresh(e)
 
-            //点击某一按键时做出的相应
+            //点击某一按键时做出的响应
             if (e.id === 'announce_btn') show_refresh("announces")
             else if (e.id === 'lecture_btn' || e.id === 'file_btn') show_refresh("lecture")
             else if (e.id === 'exper_lec_btn') show_refresh('exper_lec')
@@ -38,9 +38,15 @@
     window.addEventListener('popstate', function (e) {
         let id = e.state.item
         color_refresh(this.document.getElementById(id))
+            //点击某一按键时做出的响应
+        if (id === 'announce_btn') show_refresh("announces")
+        else if (id === 'lecture_btn' || id === 'file_btn') show_refresh("lecture")
+        else if (id === 'exper_lec_btn') show_refresh('exper_lec')
+        else if (id === 'exper_file_btn') show_refresh('exper_file')
     })
 })()
 
+//切换左侧导航栏的颜色
 function color_refresh(e) {
     let ul = document.getElementById("summary").childNodes
 
@@ -57,6 +63,7 @@ function color_refresh(e) {
     e.style.color = "#76EE00"
 }
 
+//切换显示的页面
 function show_refresh(str) {
     let info_sec = document.getElementById("info_section")
     // console.log(info_sec)
