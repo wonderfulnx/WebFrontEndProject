@@ -117,10 +117,11 @@ function ToPrimitive(input) {
 
 		let methodNames = (hint === 'string') ? ['toString', 'valueOf'] : ['valueOf', 'toString']
 
-		for (i in methodNames) {
-			let method = O[methodNames[i]]
+		let t = 0
+		for (t in methodNames) {
+			let method = O[methodNames[t]]
 			if (isCallable(method)) {
-				let result = method.call(0)
+				let result = method.call(O)
 				if (isPrimitive(result)) {
 					return result
 				}
@@ -170,18 +171,14 @@ function equal(o1, o2) {
 	if (typ2 === 'boolean') return equal(o1, Number(o2))
 
 	if (typ1 === 'string' || typ1 === 'number' || typ1 === 'symbol') {
-		if (typ2 === 'object' && o2 !== null) {
-			console.log(o2)
-			console.log(ToPrimitive(o2))
-			return equal(o1, ToPrimitive(o2))
-		}
+		if (typ2 === 'object' && o2 !== null) return equal(o1, ToPrimitive(o2))
 	}
 
 	if (typ2 === 'string' || typ2 === 'number' || typ2 === 'symbol') {
-		if (typ1 === 'object' && o1 !== null) return equal(o1, ToPrimitive(o2))
+		if (typ1 === 'object' && o1 !== null) return equal(ToPrimitive(o1), o2)
 	}
 
-	return false;
+	return false
 }
 
 // console.log(ip_sort(['255.255.255.0', '123.124.123.2', '59.66.137.30', '59.67.0.0', '59.1.1.1', '59.66.123.256', '59.66.137.4', '59.66.137.234']))
@@ -228,29 +225,41 @@ const tree = {
 // equal(2,3)
 let ls = [true, false, 1, 0, -1, "true", "false", "1", "0", "-1", "", null, undefined, Infinity, -Infinity, [], {}, [[]], [0], [1], NaN]
 
-let i = 0, j = 0
 let errors = []
 let k = 0
-console.log(equal(false, [0]))
-console.log(false==[0])
-// for (i = 0; i < ls.length; i++) {
-// 	for (j = 0; j < ls.length; j++) {
-// 		console.log(k)
-// 		console.log(ls[i]==ls[j])
-// 		// let a = ls[i]
-// 		// let b = ls[j]
-// 		// if (equal(a, b) !== (a == b)) {
-// 		// 	// console.log('error with ' + ls[i] + ' and ' + ls[j])
-// 		// 	errors.push('error with ' + ls[i] + ' and ' + ls[j])
-// 		// }
-// 		// if (equal(ls[i],ls[j]) === (ls[i] == ls[j]))
-// 		// 	// console.log('right')
-// 		// 	continue
-// 		// else {
-// 		// 	// console.log('error with ' + ls[i] + ' and ' + ls[j])
-// 		// 	errors.push('error with ' + ls[i] + ' and ' + ls[j])
-// 		// }
-// 		k++
-// 	}
-// }
-console.log(errors)
+
+// console.log(equal(ls[15], ls[0]))
+// console.log(i)
+// console.log(false==[0])
+for (let i = 0; i < ls.length; i++) {
+	for (let j = 0; j < ls.length; j++) {
+
+		let a = ls[i]
+		let b = ls[j]
+		try {
+            if (equal(a, b) === (a == b)) {
+                console.log('right')
+            }
+            else {
+                errors.push('error with ' + ls[i] + ' and ' + ls[j])
+				console.log('error with ' + ls[i] + ' and ' + ls[j])
+            }
+        }
+		catch (e) {
+			console.log(i)
+			console.log(j)
+			console.log(typeof a + ': ' + a)
+			console.log(typeof b + ': ' + b)
+		}
+		console.log('count: ' + k)
+		k++
+	}
+}
+if (errors.length === 0)
+	console.log('no error!')
+else {
+	console.log('errors:')
+	console.log(errors)
+}
+// console.log(typeof i)
+// console.log(typeof j)
