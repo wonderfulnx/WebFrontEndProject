@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="index.css">
+<script src="index.js"></script>
+
+<div>学好 Web 前端技术，走上人生巅峰！</div>
+<div id="progress-bar"></div>
+<div id="truth" style="display: none;">（不存在的）</div>
+
+<script>
+    let progress_bar = new ProgressBar({
+        'type': 'hourglass',
+        'container': '#progress-bar',
+        'background': '#808080',
+        'foreground': '#ffa500',
+        'complete': () => {
+            window.clearInterval(timer);
+            document.getElementById('truth').style.display = 'block';
+        }
+    })
+    console.log(progress_bar)
+    let current_progress = 0;
+    let timer = window.setInterval(() => {
+        console.log(current_progress);
+        progress_bar.set_progress(current_progress);
+        current_progress += 10;
+    }, 500);
+</script>

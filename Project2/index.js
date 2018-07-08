@@ -26,20 +26,6 @@ function ip_sort(ip_addresses) {
 	return ip_addresses;
 }
 
-// function* generator(root) {
-// 	let list = []
-// 	function traverse(rt){
-// 		if (rt === null) return
-// 		traverse(rt.left)
-// 		list.push(rt.val)
-// 		traverse(rt.right)
-// 	}
-// 	traverse(root)
-// 	for (let t of list){
-// 		yield t
-// 	}
-// }
-
 class TreeIterator {
 	constructor(root) {
 		// TODO:
@@ -228,9 +214,9 @@ let ls = [true, false, 1, 0, -1, "true", "false", "1", "0", "-1", "", null, unde
 let errors = []
 let k = 0
 
-// console.log(equal(ls[15], ls[0]))
-// console.log(i)
-// console.log(false==[0])
+// console.log(equal(3, 1))
+
+
 for (let i = 0; i < ls.length; i++) {
 	for (let j = 0; j < ls.length; j++) {
 
@@ -261,5 +247,3 @@ else {
 	console.log('errors:')
 	console.log(errors)
 }
-// console.log(typeof i)
-// console.log(typeof j)
