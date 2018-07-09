@@ -21,3 +21,8 @@ div.BarProgress > span{
     float: left;
     border-radius: 10px;
 }
+
+div.GlassHint{
+    font-size: 18px;
+    text-align: center;
+}

@@ -100,14 +100,19 @@ class ProgressBar {
     initGlassProgress(){
         let box = document.getElementById(this.container.substr(1))
         this.canvas = document.createElement('canvas')
+        this.para = document.createElement('div')
         box.appendChild(this.canvas)
+        box.appendChild(this.para)
+        this.para.style.width = this.canvas.width
+        this.para.style.height = this.canvas.height
+        this.para.className = 'GlassHint'
     }
     updateGlassProgress(targetProgress){
         //环境准备
         this.currentProgress = targetProgress
         let centerX = this.canvas.width / 2
         let centerY = this.canvas.height / 2
-        let halfWid = 40
+        let halfWid = 50
         let halfHei = 100
         let context = this.canvas.getContext('2d')
         this.currentProgress = targetProgress
@@ -143,5 +148,8 @@ class ProgressBar {
         //下方三角形：底为fore
         triangle(halfHei, this.foreground, false)
         triangle(sandTriHei, this.background, false)
+
+        //百分比
+        this.para.innerHTML = this.currentProgress.toFixed(0) + '%'
     }
 }
